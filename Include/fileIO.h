@@ -18,11 +18,11 @@ void readInventoryFile (){
         return;
     }
 
-    while (fscanf(data, "%d,%d,%d", &products[i].item_id, &products[i].supplier_id, &products[i].quantity) == 3) // Change 4 to 3
+    while (fscanf(data, "%d,%d,%d", &products[i].item_id, &products[i].supplier_id, &products[i].quantity) == 3)
     {
         i++;
     }
-    jumlahProd = i; // Set jumlahProd to the number of products read
+    jumlahProd = i;
     fclose(data);        
 }
 
@@ -35,11 +35,11 @@ void readItemFile (){
         return;
     }
 
-    while (fscanf(data, "%d,%49[^,],%f", &item[i].id, item[i].item_name, &item[i].price) == 3) // Change 4 to 3
+    while (fscanf(data, "%d,%49[^,],%f", &item[i].id, item[i].item_name, &item[i].price) == 3)
     {
         i++;
     }
-    jumlahItem = i; // Set jumlahItem to the number of items read
+    jumlahItem = i;
     fclose(data);        
 }
 
@@ -52,11 +52,11 @@ void readSupplierFile (){
         return;
     }
 
-    while (fscanf(data, "%d,%49[^,],%19[^\n]", &supplier[i].id, supplier[i].name, supplier[i].phone_number) == 3) // Change 4 to 3
+    while (fscanf(data, "%d,%49[^,],%19[^\n]", &supplier[i].id, supplier[i].name, supplier[i].phone_number) == 3)
     {
         i++;
     }
-    jumlahSupplier = i; // Set jumlahSupplier to the number of suppliers read
+    jumlahSupplier = i;
     fclose(data);        
 }
 
