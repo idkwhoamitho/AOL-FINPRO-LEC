@@ -4,6 +4,9 @@
 #include "fileIO.h"
 
 void allmenu(){
+	readInventoryFile();
+	readItemFile();
+	readSupplierFile();
     int choice, choose;
     while(1){
     printf("INVENTORY SYSTEM\n");
@@ -72,7 +75,7 @@ void allmenu(){
         
 //        struct Item* items = readFileItem("items.dat");
 //		int rows = get_length("items.dat");
-//        printRecordAll(items, rows);
+        printRecordAll();
 //        showRecordMenu();
         
         
