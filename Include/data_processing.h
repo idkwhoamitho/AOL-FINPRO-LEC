@@ -20,6 +20,9 @@ struct Inventory {
     int quantity;
 };
 struct Inventory products[100];
+struct Item item[100];
+struct Supplier supplier[100];
+
 struct Sales Sale;
 
 // int product_size = sizeof(products)/sizeof(products[0]);
