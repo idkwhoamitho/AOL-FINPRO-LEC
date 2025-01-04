@@ -39,7 +39,9 @@ void allmenu(){
             scanf("%d",&inventoryData.supplier_id);
             printf("3. Insert the quantity: ");
             scanf("%d",&inventoryData.quantity);
-//            addInventory(inventoryData,"./");
+        	products[jumlahProd] = inventoryData;
+    	    jumlahProd++;
+        	UpdateInventoryData();
             printf("\nSuccess\n\n");
             
         } else if(choose == 2){
@@ -50,7 +52,9 @@ void allmenu(){
             scanf("%s",&supplierData.name);
             printf("3. Insert the supplier phone number: ");
             scanf("%s",&supplierData.phone_number);
-//            addSupplier(supplierData,"./supplier.dat");
+        	supplier[jumlahSupplier] = supplierData;
+        	jumlahSupplier++;
+        	UpdateSupplierData();
             printf("\nSuccess\n\n");
             
         } else if(choose == 3){
@@ -61,40 +65,30 @@ void allmenu(){
             scanf("%s",&itemData.item_name);
             printf("3. Insert the price (.00): ");
             scanf("%f",&itemData.price);
-//        	addRecordMenuItem();
-//            addItem(itemData,"./item.dat");
+        	item[jumlahItem] = itemData;
+        	jumlahItem++; 
+        	UpdateItemData();
             printf("\nSuccess\n\n");
             
         } else if(choose == 4){
             continue;
         }
-        
+    
     } else if(choice == 2){
         printf("INVENTORY SYSTEM\n");
         printf("SHOW RECORD MAIN MENU\n\n");
         
-//        struct Item* items = readFileItem("items.dat");
-//		int rows = get_length("items.dat");
-        printRecordAll();
-//        showRecordMenu();
+        
+//        printRecordAll();
+        showRecordMenu();
         
         
     } else if(choice == 3){
-        printf("INVENTORY SYSTEM\n");
-        printf("SELECT RECORD MAIN MENU\n\n"); 
-        
-        
+	SelectData();
     } else if(choice == 4){
-        printf("INVENTORY SYSTEM\n");
-        printf("DELETE RECORD MAIN MENU\n\n");   
-		DeleteDataMenu();
-		   
-    } else if(choice == 5){
-        printf("INVENTORY SYSTEM\n");
-        printf("UPDATE RECORD MAIN MENU\n\n");      
+		DeleteDataMenu();	   
+    } else if(choice == 5){    
 		ModifyExistingDataMenu(); 
-		
-		
     } else if(choice == 6){
         break;
     }
