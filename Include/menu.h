@@ -30,10 +30,25 @@ void printRecordAll(){
     float total_quantity = 0;	
     for(int i = 0; i < jumlahItem;i++)
     {
-    	printf("A%-11d S%-17d %-19s %-11d %-13d %d\n", item[i].id, item[i].item_name, products[i].quantity, item[i].price);
+//    	printf("A%-11d S%-17d %-19s %-11d %-13d %d\n", item[i].id, item[i].item_name, products[i].quantity, item[i].price);
 //        printf("A%-11d S%-17d %-19s %-11d %-13d %d\n", item[i].id, items[i].item_name, item[i].price , item[i].price);
         total_quantity += products[i].quantity;
-        i++;
+        
+        int productIndex = -1;
+        getProductById(item[i].id, jumlahProd, &productIndex);
+        
+        if (productIndex != -1) {
+            // Calculate sales as price multiplied by quantity
+            float sales = item[i].price * products[productIndex].quantity;
+            
+            printf("%-12d %-18d %-19s %-11.2f %-13d %-11.2f\n", 
+                item[i].id, 
+                products[productIndex].supplier_id, 
+                item[i].item_name, 
+                item[i].price, 
+                products[productIndex].quantity,
+                sales); // Print the calculated sales
+        }
     }
     printf("===================================================================================\n");
 }
