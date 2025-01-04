@@ -26,6 +26,8 @@ struct Supplier supplier[100];
 
 // int product_size = sizeof(products)/sizeof(products[0]);
 
+
+
 void getProductById(int id,int size,int *index){
 	*index = -1;
     int i = 0;
@@ -275,6 +277,12 @@ void sortProductByStock(int jumlahProd){
                     
     }
     
+}
+int GetItemQuantity(int id, int size){
+    int index;
+    getProductById(id,jumlahProd,&index);
+
+    return products[index].quantity;
 }
 
 #endif
