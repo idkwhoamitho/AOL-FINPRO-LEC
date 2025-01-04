@@ -6,33 +6,33 @@
 #include "fileIO.h"
 #include <windows.h>
 
-void printRecord(struct Item* items, int rows, float price){
+void printRecord(int rows, float price, int quantity){
     printf("------------------------------------------------------------------------------\n");
     printf("%-12s %-18s %-19s %-11s %-13s %s\n", "ITEM_ID", "SUPPLIER_ID",  "ITEM_NAME", "PRICE", "QUANTITY", "SALES");
     printf("------------------------------------------------------------------------------\n");
     float total_quantity = 0;	
-    for(int i = 0; i < 5;i++)
+    for(int i = 0; i < rows;i++)
     {
-//        if(items[i].price <= price && items[i].quantity + total_quantity <= quantity){
-//        printf("A%-11d S%-17d %-19s %-11d %-13d %d\n", items[i].id, items[i].item_name, items[i].quantity, items[i].price);
-        printf("A%-11d S%-17d %-19s %-11d %-13d %d\n", items[i].id, items[i].item_name, items[i].price , items[i].price);
-//        total_quantity += items[i].quantity;
+        if(item[i].price <= price && products[i].quantity + total_quantity <= quantity){
+    	printf("A%-11d S%-17d %-19s %-11d %-13d %d\n", item[i].id, item[i].item_name, products[i].quantity, item[i].price);
+//        printf("A%-11d S%-17d %-19s %-11d %-13d %d\n", item[i].id, item[i].item_name, items[i].price , items[i].price);
+        total_quantity += products[i].quantity;
         i++;
-//        }
+        }
     }
 	printf("==============================================================================\n");
 }
 
-void printRecordAll(struct Item* items){
+void printRecordAll(){
     printf("-----------------------------------------------------------------------------------\n");
     printf("%-12s %-18s %-19s %-11s %-13s %s\n", "ITEM_ID", "SUPPLIER_ID",  "ITEM_NAME", "PRICE", "QUANTITY", "SALES");
     printf("-----------------------------------------------------------------------------------\n");
     float total_quantity = 0;	
-    for(int i = 0; i < 5;i++)
+    for(int i = 0; i < jumlahItem;i++)
     {
-//    	printf("A%-11d S%-17d %-19s %-11d %-13d %d\n", items[i].id, items[i].item_name, items[i].quantity, items[i].price);
-        printf("A%-11d S%-17d %-19s %-11d %-13d %d\n", items[i].id, items[i].item_name, items[i].price , items[i].price);
-//        total_quantity += items[i].quantity;
+    	printf("A%-11d S%-17d %-19s %-11d %-13d %d\n", item[i].id, item[i].item_name, products[i].quantity, item[i].price);
+//        printf("A%-11d S%-17d %-19s %-11d %-13d %d\n", item[i].id, items[i].item_name, item[i].price , item[i].price);
+        total_quantity += products[i].quantity;
         i++;
     }
     printf("===================================================================================\n");

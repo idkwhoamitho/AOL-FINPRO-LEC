@@ -278,11 +278,11 @@ void sortProductByStock(int jumlahProd){
     }
     
 }
-int GetItemQuantity(int id, int size){
-    int index;
-    getProductById(id,jumlahProd,&index);
-
-    return products[index].quantity;
-}
+//int GetItemQuantity(int id, int size){
+//    int index;
+//    getItemById(id,jumlahProd,&index);
+//
+//    return products[index].quantity;
+//}
 
 #endif

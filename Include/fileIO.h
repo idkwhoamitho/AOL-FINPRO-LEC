@@ -21,10 +21,7 @@ void readInventoryFile (){
     char line[1024];
     int index = 0;
 
-    // Skip the header line
-    fgets(line, sizeof(line), data);
-
-    while (fscanf(data,"%d,%d,%d",&products[i].item_id,products[i].supplier_id,&products[i].quantity) == 4 && !feof(data))
+    while (fscanf(data,"%d,%d,%d",&products[i].item_id,&products[i].supplier_id,&products[i].quantity) == 4 && !feof(data))
     {
         i++;
     }
@@ -43,10 +40,7 @@ void readItemFile (){
     char line[1024];
     int index = 0;
 
-    // Skip the header line
-    fgets(line, sizeof(line), data);
-
-    while (fscanf(data,"%d,%s,%d",&item[i].id,item[i].item_name,&item[i].price) == 4 && !feof(data))
+    while (fscanf(data,"%d,%s,%f",&item[i].id,item[i].item_name,&item[i].price) == 4 && !feof(data))
     {
         i++;
     }
@@ -66,10 +60,7 @@ void readSupplierFile (){
     char line[1024];
     int index = 0;
 
-    // Skip the header line
-    fgets(line, sizeof(line), data);
-
-    while (fscanf(data,"%d,%s,%s",&supplier[i].id,supplier[i].name,&supplier[i].phone_number) == 4 && !feof(data))
+    while (fscanf(data,"%d,%[^,],%[^\n]",&supplier[i].id,supplier[i].name,&supplier[i].phone_number) == 4 && !feof(data))
     {
         i++;
     }
