@@ -123,82 +123,47 @@ void readSupplierFile (){
 }
 
 void UpdateInventoryData(){
-   char header[1024];
-   FILE *file = fopen("inventory.dat","r");
+    FILE *file = fopen("Inventory.dat", "w"); 
 
-   if (fgets(header,sizeof(header),file) == NULL)
-   {
-    /* code */
-        perror("Error reading a header");
-        fclose(file);
-        return;
-   }
-   file = fopen("inventory.dat","w");
-   fputs(header,file);
-
-   for (int i = 0; i < jumlahProd; i++)
-   {
-    /* code */
-        fprintf(file,"\n%d,%d,%d",
-        products[i].item_id,
-        products[i].supplier_id,
-        products[i].quantity
+    for (int i = 0; i < jumlahProd; i++) {
+        fprintf(file, "%d,%d,%d\n",
+            products[i].item_id,
+            products[i].supplier_id,
+            products[i].quantity
         );
-   }
-   fclose(file);
-   printf("Data updated");       
+    }
+    fclose(file);
+    printf("Inventory data updated successfully.\n");
 }
+
 void UpdateItemData(){
    char header[1024];
-   FILE *file = fopen("item.dat","r");
+   FILE *file = fopen("item.dat","w");
 
-   if (fgets(header,sizeof(header),file) == NULL)
+   for (int i = 0; i < jumlahItem; i++)
    {
-    /* code */
-        perror("Error reading a header");
-        fclose(file);
-        return;
-   }
-   file = fopen("item.dat","w");
-   fputs(header,file);
-
-   for (int i = 0; i < jumlahProd; i++)
-   {
-    /* code */
-        fprintf(file,"\n%d,%s,%d",
-        item[i].id,
-        item[i].item_name,
-        item[i].price
+        fprintf(file, "%d,%s,%.2f\n",
+            item[i].id,
+            item[i].item_name,
+            item[i].price
         );
    }
    fclose(file);
-   printf("Data updated");       
+   printf("Item data updated successfully.\n");
 }
+
 void UpdateSupplierData(){
-   char header[1024];
-   FILE *file = fopen("supplier.dat","r");
+    FILE *file = fopen("Supplier.dat", "w"); 
 
-   if (fgets(header,sizeof(header),file) == NULL)
-   {
-    /* code */
-        perror("Error reading a header");
-        fclose(file);
-        return;
-   }
-   file = fopen("supplier.dat","w");
-   fputs(header,file);
-
-   for (int i = 0; i < jumlahProd; i++)
-   {
-    /* code */
-        fprintf(file,"\n%d,%s,%s",
-        supplier[i].id,
-        supplier[i].name,
-        supplier[i].phone_number
+    for (int i = 0; i < jumlahSupplier; i++) {
+        fprintf(file, "%d,%s,%s\n",
+            supplier[i].id,
+            supplier[i].name,
+            supplier[i].phone_number
         );
-   }
-   fclose(file);
-   printf("Data updated");       
+    }
+    fclose(file);
+    printf("Supplier data updated successfully.\n");
 }
 
 
