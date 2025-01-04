@@ -11,13 +11,14 @@ void printRecord(struct Item* items, int rows, float price){
     printf("%-12s %-18s %-19s %-11s %-13s %s\n", "ITEM_ID", "SUPPLIER_ID",  "ITEM_NAME", "PRICE", "QUANTITY", "SALES");
     printf("------------------------------------------------------------------------------\n");
     float total_quantity = 0;	
-    for(int i = 0; i < rows;i++)
+    for(int i = 0; i < 5;i++)
     {
-        if(items[i].price <= price && items[i].quantity + total_quantity <= quantity){
-        printf("A%-11d S%-17d %-19s %-11d %-13d %d\n", items[i].id, items[i].item_name, items[i].quantity, items[i].price);
-        total_quantity += items[i].quantity;
+//        if(items[i].price <= price && items[i].quantity + total_quantity <= quantity){
+//        printf("A%-11d S%-17d %-19s %-11d %-13d %d\n", items[i].id, items[i].item_name, items[i].quantity, items[i].price);
+        printf("A%-11d S%-17d %-19s %-11d %-13d %d\n", items[i].id, items[i].item_name, items[i].price , items[i].price);
+//        total_quantity += items[i].quantity;
         i++;
-        }
+//        }
     }
 	printf("==============================================================================\n");
 }
@@ -27,10 +28,11 @@ void printRecordAll(struct Item* items){
     printf("%-12s %-18s %-19s %-11s %-13s %s\n", "ITEM_ID", "SUPPLIER_ID",  "ITEM_NAME", "PRICE", "QUANTITY", "SALES");
     printf("-----------------------------------------------------------------------------------\n");
     float total_quantity = 0;	
-    for(int i = 0; i < rows;i++)
+    for(int i = 0; i < 5;i++)
     {
-    	printf("A%-11d S%-17d %-19s %-11d %-13d %d\n", items[i].id, items[i].item_name, items[i].quantity, items[i].price);
-        total_quantity += items[i].quantity;
+//    	printf("A%-11d S%-17d %-19s %-11d %-13d %d\n", items[i].id, items[i].item_name, items[i].quantity, items[i].price);
+        printf("A%-11d S%-17d %-19s %-11d %-13d %d\n", items[i].id, items[i].item_name, items[i].price , items[i].price);
+//        total_quantity += items[i].quantity;
         i++;
     }
     printf("===================================================================================\n");
@@ -38,7 +40,7 @@ void printRecordAll(struct Item* items){
 
 void ModifyExistingDataMenu(){
     char choose, price, quantity;
-    int id, new_price, new_quantity;
+    int id, new_price, new_quantity, index;
 //    printProductsCatalogue();
     while (1)
     {
@@ -51,13 +53,13 @@ void ModifyExistingDataMenu(){
         }
     	printf("\n Do you want to Modify the Price ? (Y/N) : ");
         scanf(" %c",&price);
-        if(price == Y || price == y){
+        if(price == 'Y' || price == 'y'){
         	printf("\n What is the new Price ?: ");
 	        scanf(" %d",&new_price);
 		}
     	printf("\n Do you want to Modify the Quantity ? (Y/N) : ");
         scanf(" %c",&quantity);
-        if(quantity == Y || quantity == y){
+        if(quantity == 'Y' || quantity == 'y'){
         	printf("\n What is the new Quantity ?: ");
 	        scanf(" %d",&new_quantity);
 		}
@@ -65,7 +67,7 @@ void ModifyExistingDataMenu(){
         printf("Did you want to continue modifying existing products ?(Y/N): ");
         scanf(" %c",&choose);
         if(choose == 'N' || 'n') {
-            updateData();
+//            updateData();
             break;
         }
     }
@@ -73,7 +75,7 @@ void ModifyExistingDataMenu(){
 
 void DeleteDataMenu(){
     char choose1, choose2;
-    int id,index;
+    int id,index, choose;
 //    printProductsCatalogue();
     while (1)
     {
@@ -99,13 +101,13 @@ void DeleteDataMenu(){
         if(choose1 == 'N' || choose1 == 'n'){
 	    	break;
 		} else {
-			struct Product temp[jumlahProd - 1];
-            int tempindex = 0;
-        	for(int i = 0;i < jumlahProd;i++){
-        		if(i != index){
-            		temp[tempindex++] = products[i];
-        		}
-	    	}
+//			struct Product temp[jumlahProd - 1];
+//            int tempindex = 0;
+//        	for(int i = 0;i < jumlahProd;i++){
+//        		if(i != index){
+//            		temp[tempindex++] = products[i];
+//        		}
+//	    	}
 //    		deleteData(temp, jumlahProd - 1);
        		jumlahProd--;
         	printf("Did you want to continue to delete data ?(Y/N): ");
@@ -129,13 +131,13 @@ void DeleteDataMenu(){
         if(choose1 == 'N' || choose1 == 'n'){
 	    	break;
 		} else {
-			struct Product temp[jumlahProd - 1];
-            int tempindex = 0;
-        	for(int i = 0;i < jumlahProd;i++){
-        		if(i != index){
-            		temp[tempindex++] = products[i];
-        		}
-	    	}
+//			struct Product temp[jumlahProd - 1];
+//            int tempindex = 0;
+//        	for(int i = 0;i < jumlahProd;i++){
+//        		if(i != index){
+//            		temp[tempindex++] = products[i];
+//        		}
+//	    	}
 //    		deleteData(temp, jumlahProd - 1);
        		jumlahProd--;
         	printf("Did you want to continue to delete data ?(Y/N): ");
