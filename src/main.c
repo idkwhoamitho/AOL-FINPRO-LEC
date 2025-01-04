@@ -4,7 +4,7 @@
 #include "fileIO.h"
 
 void allmenu(){
-    int choice;
+    int choice, choose;
     while(1){
     printf("INVENTORY SYSTEM\n");
     printf("INVENTORY DATA MAIN MENU\n\n");
@@ -36,7 +36,7 @@ void allmenu(){
             scanf("%d",&inventoryData.supplier_id);
             printf("3. Insert the quantity: ");
             scanf("%d",&inventoryData.quantity);
-            addInventory(inventoryData,"./");
+//            addInventory(inventoryData,"./");
             printf("\nSuccess\n\n");
             
         } else if(choose == 2){
@@ -47,7 +47,7 @@ void allmenu(){
             scanf("%s",&supplierData.name);
             printf("3. Insert the supplier phone number: ");
             scanf("%s",&supplierData.phone_number);
-            addSupplier(supplierData,"./supplier.dat");
+//            addSupplier(supplierData,"./supplier.dat");
             printf("\nSuccess\n\n");
             
         } else if(choose == 3){
@@ -58,10 +58,8 @@ void allmenu(){
             scanf("%s",&itemData.item_name);
             printf("3. Insert the price (.00): ");
             scanf("%f",&itemData.price);
-            printf("3. Insert the quantity: ");
-            scanf("%d",&itemData.quantity);
-        	addRecordMenuItem();
-            addItem(itemData,"./item.dat");
+//        	addRecordMenuItem();
+//            addItem(itemData,"./item.dat");
             printf("\nSuccess\n\n");
             
         } else if(choose == 4){
@@ -72,8 +70,8 @@ void allmenu(){
         printf("INVENTORY SYSTEM\n");
         printf("SHOW RECORD MAIN MENU\n\n");
         
-        struct Item* items = readFileItem("items.dat");
-		int rows = get_length("items.dat");
+//        struct Item* items = readFileItem("items.dat");
+//		int rows = get_length("items.dat");
 //        printRecordAll(items, rows);
 //        showRecordMenu();
         
