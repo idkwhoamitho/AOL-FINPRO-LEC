@@ -9,68 +9,6 @@ int jumlahProd;
 int jumlahItem;
 int jumlahSupplier;
 
-//void readInventoryFile (){
-//    
-//    data = fopen("Inventory.dat","r");
-//    int i = 0;
-//    if (data == NULL)
-//    {
-//        /* code */
-//        perror("An error has occured");
-//    }
-//    char line[1024];
-//    int index = 0;
-//
-//    while (fscanf(data,"%d,%d,%d",&products[i].item_id,&products[i].supplier_id,&products[i].quantity) == 4 && !feof(data))
-////    while (fscanf(data,"%d,%d,%d",&products[i].item_id,&products[i].supplier_id,&products[i].quantity) == 4)
-//    {
-//        i++;
-//    }
-//    jumlahProd = i + 1;
-//    fclose(data);        
-//}
-//void readItemFile (){
-//    
-//    data = fopen("Item.dat","r");
-//    int i = 0;
-//    if (data == NULL)
-//    {
-//        /* code */
-//        perror("An error has occured");
-//    }
-//    char line[1024];
-//    int index = 0;
-//
-//    while (fscanf(data,"%d,%[^,],%f",&item[i].id,item[i].item_name,&item[i].price) == 4 && !feof(data))
-////    while (fscanf(data,"%d,%[^,],%f",&item[i].id,item[i].item_name,&item[i].price) == 4)
-//    {
-//        i++;
-//    }
-//    jumlahItem = i + 1;
-//    fclose(data);        
-//}
-//
-//void readSupplierFile (){
-//    
-//    data = fopen("Supplier.dat","r");
-//    int i = 0;
-//    if (data == NULL)
-//    {
-//        /* code */
-//        perror("An error has occured");
-//    }
-//    char line[1024];
-//    int index = 0;
-//
-//    while (fscanf(data,"%d,%[^,],%[^\n]",&supplier[i].id,supplier[i].name,&supplier[i].phone_number) == 4 && !feof(data))
-////    while (fscanf(data,"%d,%[^,],%[^\n]",&supplier[i].id,supplier[i].name,&supplier[i].phone_number) == 4)
-//    {
-//        i++;
-//    }
-//    jumlahSupplier = i + 1;
-//    fclose(data);        
-//}
-
 void readInventoryFile (){
     data = fopen("Inventory.dat","r");
     int i = 0;
